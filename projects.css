@@ -40,3 +40,14 @@ button:hover > a {
     color: white;
     text-decoration: none;
 }
+
+.card {
+    animation-name: flipcard;
+    animation-duration: 1s;
+    backface-visibility: hidden;
+}
+
+@keyframes flipcard {
+    from {transform: rotateY(180deg)}
+    to {transform: rotateY(0deg)}
+}
