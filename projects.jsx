@@ -20,13 +20,6 @@ function Main() {
             link="https://github.com/dritchie1031/lango"
             ></ProjectCard>
         <ProjectCard
-            thumbnail="assets/golden_dragon.png"
-            cardText="INH (Insert Name Here) is a 2D turn-based RPG that lets you create your own characters."
-            realm="Personal"
-            longText="Me and a few other CS students started this in 2019. We love games like Fire Emblem, but wanted more customizability in the characters (hence the name 'Insert Name Here'). It's been slow going with school and everything, but we hope to make more progress soon. We decided to program the game in Java, using the LibGDX library. We have configured the game to eventually work as an Android app, but current development is focusing on desktop."
-            link="https://github.com/dritchie1031/InsertNameHere"
-            ></ProjectCard>
-        <ProjectCard
             thumbnail="assets/plastic.jpg"
             cardText="CRiT is a cross-platform app that scans a barcode to tell the user whether to recycle, compost, or trash the item."
             realm="Hackathon"
@@ -93,7 +86,7 @@ class ProjectCard extends React.Component {
                       <button type="button" className="btn btn-sm btn-outline-secondary" onClick={this.hideMoreInfo}>Front</button>
                     </div>
                     <div className="btn-group">
-                      <button type="button" className="btn btn-sm btn-outline-secondary"><a href={this.state.link}>Check it out!</a></button>
+                      <button type="button" className="btn btn-sm btn-outline-secondary"><a href={this.state.link} target="blank">Check it out!</a></button>
                     </div>
                   </div>
                 </div>
@@ -101,7 +94,6 @@ class ProjectCard extends React.Component {
             </div>);
         }
     }
-
 }
 
 // render the page
