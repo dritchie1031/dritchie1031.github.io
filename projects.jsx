@@ -9,8 +9,22 @@ function Main() {
             thumbnail="assets/cfclthumbnail.png"
             cardText="I have been building the Community Futures, Community Lore website for the last several months."
             realm="Work"
-            longText="Another Computer Science student and I have been working on building the front end of a website for several months. We have been using HTML, CSS, JavaScript, and React to follow a design. We managed the project with Github and created our own plan, milestones, and goals with our employer. This is a work in progress still, but it should be at Version 1 soon."
+            longText="Another Computer Science student and I have been working on building the front end of a website for several months. We have been using HTML, CSS, JavaScript, and React to follow a given design. We managed the project with Github and created our own plan, milestones, and goals with our employer. Check out the newly released site!"
             link="https://ucdavis.github.io/cfclsite"
+            ></ProjectCard>
+        <ProjectCard
+            thumbnail="assets/coding.jpg"
+            cardText="A review of existing games for Computer Science Education."
+            realm="Research"
+            longText="I spent a quarter looking at the academic literature related to games that teach students how to code. I compiled a set of criteria by which we can evaluate these games for their effectiveness. Lastly, I proposed a game to meet the established critera. I hope to attempt to implement the game as my senior project. Say tuned!"
+            link="https://drive.google.com/file/d/1m_i89YmRVaQ5X0EY_pi0l8iX-ilhYtOd/view?usp=sharing"
+            ></ProjectCard>
+        <ProjectCard
+            thumbnail="assets/scatterArrayFig1.png"
+            cardText="My group's final project for our Machine Learning Class: a snowfall predictor."
+            realm="School"
+            longText="As our final project, me and 9 other students decided to create a snowfall predictor, using government-published weather datasets for the Tahoe area. We used multiple methods to predict the snowfall, but the most effective was our time series neural network (which was my main role in the group). Take a look at our datasets, code, and methods on GitHub!"
+            link="https://github.com/brandon-lau0/ECS-171-Course-Project"
             ></ProjectCard>
         <ProjectCard
             thumbnail="assets/langothumbnail.png"
@@ -28,7 +42,7 @@ function Main() {
             ></ProjectCard>
         <ProjectCard
             thumbnail="assets/dnd.jpg"
-            cardText="A random NPC Generator for Dungeons and Dragons Fifth Edition. My first project!\n"
+            cardText="A random NPC Generator for Dungeons and Dragons Fifth Edition. My first project!"
             realm="Personal"
             longText="I started this project when I was a senior in high school, because I started to play D&D as a Game Master and needed a way to quickly come up with characters. It was my first actual project. I used Python for web scraping in order to get the data, and stored it in text files. The program reads the text files and generates a random combination. More customizability and a better GUI is on the way."
             link="https://github.com/dritchie1031/NPCGen"
