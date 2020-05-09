@@ -103,6 +103,54 @@ cs = {
     text: "University Honors Program, 3 years"
   }]
 };
+edu = {
+  exp: [{
+    title: "class1",
+    header: "Davis Senior High School",
+    text: /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", null, "January 2020 - March 2020"), /*#__PURE__*/React.createElement("p", null, "As a part of one of my Education minor classes (Teaching STEM to High School Students) I interned in a robotics classroom at Davis High, where I learned a lot about project-based learning and teaching engineering and design principles."))
+  }, {
+    title: "TStem",
+    header: "ThoughtSTEM",
+    text: /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", null, "June 2019 - August 2019"), /*#__PURE__*/React.createElement("p", null, "At ThoughtSTEM, I worked with my other interns to teach kids to code, using game-oriented languages that were custom-built with Racket. We also worked to develop new languages and curricula, managing a large GitHub repository and issues-based workflow."))
+  }, {
+    title: "class2",
+    header: "Francis Harper Junior High School",
+    text: /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", null, "October 2018 - February 2019"), /*#__PURE__*/React.createElement("p", null, "As a part of another one of my Education minor classes (Teaching STEM to Middle School Students) I interned in a industrial technology and robotics classroom. I learned about different methods of instruction, and about ensuring safe practices with various tools in the classroom."))
+  }],
+  ed: [{
+    name: "Teaching STEM to Middle School Students",
+    grade: "A"
+  }, {
+    name: "Education Psychology",
+    grade: "A"
+  }, {
+    name: "Education in a Digital Age",
+    grade: "A"
+  }, {
+    name: "Teaching STEM to High School Students",
+    grade: "A"
+  }, {
+    name: "Issues in Higher Education",
+    grade: "A"
+  }, {
+    name: "Social and Philosophical Foundations of Education",
+    grade: "IP"
+  }],
+  tech: [{
+    title: "csgames",
+    header: "Games for Computer Science Education",
+    text: /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", null, "One of my big interests for educational technology is the focus of a research paper and upcoming project. I have examined literature on the use of video games to teach introductory programming, and what strategies are most effective. You can find my paper on my projects page. I would now like to use this research to inform the creation of a game of my own!"))
+  }, {
+    title: "csedtools",
+    header: "Interactive Textbook",
+    text: /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", null, "Soon I will begin working on an interactive textbook for Computer Science classes that will be able to run code samples on the front-end!"))
+  }],
+  awards: [{
+    text: "Letters and Sciences Dean's Honor List, 6 quarters"
+  }, {
+    text: "University Honors Program, 3 years"
+  }]
+};
 csResume = [/*#__PURE__*/React.createElement(ResumeSection, {
   title: "Exp",
   headerText: "Experience",
@@ -138,13 +186,25 @@ eduResume = [/*#__PURE__*/React.createElement(ResumeSection, {
   title: "Exp",
   headerText: "Experience",
   body: /*#__PURE__*/React.createElement(ContentStory, {
-    items: cs.exp
+    items: edu.exp
   })
 }), /*#__PURE__*/React.createElement(ResumeSection, {
-  title: "PLangs",
-  headerText: "Education Technology",
-  body: /*#__PURE__*/React.createElement(ProgressBars, {
-    items: cs.langs
+  title: "Ed",
+  headerText: "Education",
+  body: /*#__PURE__*/React.createElement(Education, {
+    items: edu.ed
+  })
+}), /*#__PURE__*/React.createElement(ResumeSection, {
+  title: "Tech",
+  headerText: "Research Interests",
+  body: /*#__PURE__*/React.createElement(ContentStory, {
+    items: edu.tech
+  })
+}), /*#__PURE__*/React.createElement(ResumeSection, {
+  title: "Academics",
+  headerText: "Academic Awards and Distinctions",
+  body: /*#__PURE__*/React.createElement(List, {
+    items: edu.awards
   })
 })];
 
@@ -289,7 +349,7 @@ function Education(props) {
   }, item.grade)));
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h1", {
     class: "display-4"
-  }, "University of California, Davis"), /*#__PURE__*/React.createElement("p", null, "Expected Graduation: Spring 2021"), /*#__PURE__*/React.createElement("p", null, "GPA: 3.94"), /*#__PURE__*/React.createElement("p", null, "Computer Science Coursework:"), /*#__PURE__*/React.createElement("ul", {
+  }, "University of California, Davis"), /*#__PURE__*/React.createElement("p", null, "Expected Graduation: Spring 2021"), /*#__PURE__*/React.createElement("p", null, "GPA: 3.94"), /*#__PURE__*/React.createElement("p", null, "Coursework:"), /*#__PURE__*/React.createElement("ul", {
     className: "list-group"
   }, classes));
 }

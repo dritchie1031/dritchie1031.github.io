@@ -78,6 +78,66 @@ cs = {
     ]
 }
 
+edu = {
+    exp: [
+        {
+            title: "class1",
+            header: "Davis Senior High School",
+            text: <div>
+                    <p>January 2020 - March 2020</p>
+                    <p>As a part of one of my Education minor classes (Teaching STEM to High School Students) I interned in a robotics classroom at Davis High, where I learned a lot about project-based learning and teaching engineering and design principles.</p>
+                </div>
+        },
+        {
+            title: "TStem",
+            header: "ThoughtSTEM",
+            text: <div>
+                    <p>June 2019 - August 2019</p>
+                    <p>At ThoughtSTEM, I worked with my other interns to teach kids to code, using game-oriented
+                        languages that were custom-built with Racket. We also worked to develop new languages and curricula, managing a large
+                        GitHub repository and issues-based workflow.</p>
+                </div>
+        },
+        {
+            title: "class2",
+            header: "Francis Harper Junior High School",
+            text: <div>
+                    <p>October 2018 - February 2019</p>
+                    <p>As a part of another one of my Education minor classes (Teaching STEM to Middle School Students) I interned in a industrial technology and robotics classroom. I learned about different methods of instruction, and about ensuring safe practices with various tools in the classroom.</p>
+                </div>
+        }
+    ],
+    ed: [
+        {name: "Teaching STEM to Middle School Students", grade: "A"},
+        {name: "Education Psychology", grade: "A"},
+        {name: "Education in a Digital Age", grade: "A"},
+        {name: "Teaching STEM to High School Students", grade: "A"},
+        {name: "Issues in Higher Education", grade: "A"},
+        {name: "Social and Philosophical Foundations of Education", grade: "IP"}
+    ],
+    tech: [
+        {
+            title: "csgames",
+            header: "Games for Computer Science Education",
+            text: <div>
+                    <p>One of my big interests for educational technology is the focus of a research paper and upcoming project. I have examined literature on the use of video games to teach introductory programming, and what strategies are most effective.
+                       You can find my paper on my projects page. I would now like to use this research to inform the creation of a game of my own!</p>
+                </div>
+        },
+        {
+            title: "csedtools",
+            header: "Interactive Textbook",
+            text: <div>
+                        <p>Soon I will begin working on an interactive textbook for Computer Science classes that will be able to run code samples on the front-end!</p>
+                </div>
+        }
+    ],
+    awards: [
+        {text: "Letters and Sciences Dean's Honor List, 6 quarters"},
+        {text: "University Honors Program, 3 years"}
+    ]
+}
+
 csResume = [
     <ResumeSection title="Exp" headerText="Experience" body={<ContentStory items={cs.exp}/>}/>,
     <ResumeSection title="Ed" headerText="Education" body={<Education items={cs.ed}/>}/>,
@@ -87,8 +147,10 @@ csResume = [
 ]
 
 eduResume = [
-    <ResumeSection title="Exp" headerText="Experience" body={<ContentStory items={cs.exp}/>}/>,
-    <ResumeSection title="PLangs" headerText="Education Technology" body={<ProgressBars items={cs.langs}/>}/>
+    <ResumeSection title="Exp" headerText="Experience" body={<ContentStory items={edu.exp}/>}/>,
+    <ResumeSection title="Ed" headerText="Education" body={<Education items={edu.ed}/>}/>,
+    <ResumeSection title="Tech" headerText="Research Interests" body={<ContentStory items={edu.tech}/>}/>,
+    <ResumeSection title="Academics" headerText="Academic Awards and Distinctions" body={<List items={edu.awards}/>}/>
 ]
 
 class Main extends React.Component {
@@ -195,7 +257,7 @@ function Education(props) {
             <h1 class="display-4">University of California, Davis</h1>
             <p>Expected Graduation: Spring 2021</p>
             <p>GPA: 3.94</p>
-            <p>Computer Science Coursework:</p>
+            <p>Coursework:</p>
             <ul className="list-group">
                 {classes}
             </ul>
