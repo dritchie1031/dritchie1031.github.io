@@ -1,68 +1,99 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Daniel Ritchie</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="./index.css" rel="stylesheet">
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="reset.css" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+
+  <link href="index.css" rel="stylesheet">
+
+  <!--<link rel="icon" href="favicon.ico" />
+  <meta name="description" content="A scifi RPG game to teach you coding!" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/eoslogo.png" />-->
+
+  <meta name="theme-color" content="#7952b3">
+
+  <title>Daniel Ritchie</title>
 </head>
 
-<body class="text-center">
-    <header>
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-             <a class="navbar-brand" href="#">Daniel Ritchie</a>
-             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-               <span class="navbar-toggler-icon"></span>
-             </button>
-             <div class="collapse navbar-collapse" id="navbarCollapse">
-               <ul class="navbar-nav mr-auto">
-                 <li class="nav-item active">
-                   <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                 </li>
-                 <li class="nav-item">
-                   <a class="nav-link" href="projects.html">Projects</a>
-                 </li>
-                 <li class="nav-item">
-                   <a class="nav-link" href="resume.html">Resume</a>
-                 </li>
-               </ul>
-             </div>
-           </nav>
-       </header>
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-        <!--<header class="masthead mb-auto">
-            <div class="inner">
-                <h3 class="masthead-brand">Daniel Ritchie</h3>
-                <nav class="nav nav-masthead justify-content-center">
-                    <a class="nav-link active" href="#">Home</a>
-                    <a class="nav-link" href="projects.html">Projects</a>
-                    <a class="nav-link" href="resume.html">Resume</a>
-                </nav>
-            </div>
-        </header>-->
-
-        <main role="main" class="inner cover">
-            <br/>
-            <h1 class="cover-heading">Hi, I'm Daniel.</h1>
-            <br/>
-            <img class="profilePic" src="assets/DanielRitchie.jpg"/>
-            <p class="lead"></br>I'm an undergrad at UC Davis majoring in Computer Science and minoring in Education.
-                Some of my hobbies include reading, writing, playing soccer, and Dungeons and Dragons.</p>
-            <p class="lead">As a programmer, I have lots of interests. I have done some web development work,
-                and I have done a couple of personal projects with game and app development. I am also interested
-                in the intersection of CS and Education, including both educational technology and .</p>
-
-        </main>
-
-        <footer class="mastfoot mt-auto">
-            <div class="inner">
-                <p>Made with <a target="blank" href="https://getbootstrap.com/">Bootstrap</a></p>
-            </div>
-        </footer>
+<body class="container-fluid text-white bg-dark">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark" aria-label="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Daniel Ritchie</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-dr"
+        aria-controls="navbar-dr" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbar-dr">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Research</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cv.html">CV</a>
+          </li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <div class="container-md main">
+    <img src="assets/headshot.JPG" class="rounded-circle border border-white border-2 headshot" alt="picture of daniel"/>
+    <h1>Daniel Ritchie</h1>
+    <p class="lead">Student. Researcher. Programmer.</p>
+    <h5 style="text-align: center;">
+      <span class="badge bg-secondary">Irvine, CA
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt"
+          viewBox="0 0 16 16">
+          <path
+            d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+          <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+        </svg>
+      </span>
+      <span class="badge bg-secondary">San Diego, CA
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt"
+          viewBox="0 0 16 16">
+          <path
+            d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+          <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+        </svg>
+      </span>
+      <span class="badge bg-secondary">Digital Learning Lab
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-building"
+          viewBox="0 0 16 16">
+          <path fill-rule="evenodd"
+            d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694 1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z" />
+          <path
+            d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z" />
+        </svg>
+      </span>
+    </h5>
+    <br/>
+    <div class="container-sm">
+      <p>I am a first year PhD student focusing on Digital Media within the Teaching, Learning, and Educational Improvement
+        (TLEI) track in the School of Education at the University of California, Irvine.</p>
+      <p>I earned my Bachelor's Degree in Computer Science with a minor in Education from the University of California, Davis in June of 2021.</p>
+      <p>I am currently conducting research with the <a class="text-reset text-decoration-underline"
+          href="https://digitallearninglab.org">Digital Learning Lab</a>, and my research interests lie with the intersection
+        of technology and education.</p>
+      <p>Outside of my studies and research, I love playing soccer, throwing a frisbee, playing video games, and playing
+        Dungeons and Dragons.</p>
+    </div>
+  </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 </body>
 </html>
