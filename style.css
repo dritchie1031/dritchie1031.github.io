@@ -115,12 +115,18 @@ a {
 }
 
 .card {
-  border: none;
+  border: 1px solid lightgray;
 }
 
 button:focus,
 button:active {
   outline: solid #add8e6 2px;
+}
+
+.card-image {
+  height: 200px;
+  align-self: center;
+  max-width: 250px;
 }
 
 @media (min-width: 320px) and (max-width: 992px) {

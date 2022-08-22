@@ -6,13 +6,13 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <meta name="description" content="" />
-    <meta name="author" content="Savvina Drougouti" />
+    <meta name="description" content="Personal website for PhD student Daniel Ritchie" />
 
     <title>Daniel Ritchie</title>
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link
@@ -42,7 +42,7 @@
         <span class="d-none d-lg-block">
           <img
             class="img-fluid img-profile mb-3"
-            src="headshot.JPG"
+            src="imgs/headshot.JPG"
             alt="Profile Picture"
           />
         </span>
@@ -71,20 +71,22 @@
             <a class="nav-link js-scroll-trigger" href="#projects">Projects</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#experience"
-              >Experience</a
-            >
+            <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#publications">Publications</a>
+            <a class="nav-link js-scroll-trigger" href="#pubs">Publications</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#education"
-              >Education</a
-            >
+            <a class="nav-link js-scroll-trigger" href="#education">Education</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="Daniel-Ritchie-CV.pdf" target="_blank">CV</a>
           </li>
         </ul>
       </div>
@@ -94,7 +96,7 @@
       <section class="resume-section p-3 p-lg-5" id="about" style="min-height: 100vh">
         <div class="my-auto">
           <p class="mobile-name">
-            <img class="mobile-img" src="headshot.JPG" alt="Profile Picture" />
+            <img class="mobile-img" src="imgs/headshot.JPG" alt="Profile Picture" />
           </p>
           <p class="mobile-name">Daniel <span class="family-name"> Ritchie</span></p>
           <h1 class="mb-3 mt-5">
@@ -108,8 +110,15 @@
             Researcher ~ Educator ~ Programmer
           </h4>
 
-          <p class="mb-3">
-            I am a PhD Student in Education, with a specialization in Digital Media. My research focus is Educational Technology and Computing Education.
+          <p class="mb-3" style="font-size: 1.1rem">
+            I am a PhD Student in Education at the University of California, Irvine, with a specialization in Digital Media. My research focus is interactive educational technology and technology education
+            and I work with Dr. Mark Warschauer, Dr. Ying Xu, and other amazing scholars at the UCI Digital Learning Lab.
+          </p>
+          <p class="mb-3" style="font-size: 1.1rem">
+            My upcoming dissertation work will involve co-designing, engineering, and then testing a web-based tool to teach gamified data and artificial intelligence literacy to middle school students.
+          </p>
+          <p class="mb-3" style="font-size: 1.1rem">
+            My hobbies and interests include playing video games, Dungeons and Dragons, soccer, Quadball (AKA Quidditch), and keeping up-to-date on Marvel movies.
           </p>
         </div>
       </section>
@@ -118,43 +127,87 @@
         <div class="my-auto">
           <h2 class="mb-5">Projects</h2>
           <div class="row">
-            <div class="col-12 col-md-12 col-lg-6">
+            <div class="col-12 col-md-6 col-lg-4">
               <div class="card mb-4">
-                <img src="conversetolearn-logo.png"
+                <a href="https://www.conversetolearn.org/codeai.html" target="_blank">
+                  <img src="imgs/codeai-nobackground.png"
+                  alt="CodeAI Logo" 
+                  class="card-image"/>
+                  <h5 class="pt-4">
+                    CodeAI
+                  </h5>
+                  <div class="card-body">
+                    <p style="text-decoration: none; color: black">
+                      Developing and testing curricula and tools to teach AI literacy.
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card mb-4">
+                <a href="https://www.conversetolearn.org/stem.html" target="_blank">
+                  <img src="imgs/conversetolearn-logo.png"
                   alt="Converse to Learn Logo" 
-                  style="max-width: 200px; align-self: center"/>
-                <h5 class="pt-4">
-                  Converse to Learn
-                </h5>
-                <div class="card-body">
-                  <p>
-                    In partnership with PBS KIDS, we are developing and testing Conversational Agents embedded within e-book and 
-                    television shows to promote dialogic learning.
-                  </p>
-                </div>
+                  class="card-image"/>
+                  <h5 class="pt-4">
+                    Converse to Learn
+                  </h5>
+                  <div class="card-body">
+                    <p style="text-decoration: none; color: black">
+                      Testing conversational agents embedded within STEM educational childrens TV shows.
+                    </p>
+                  </div>
+                </a>
               </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
               <div class="card mb-4">
-                <p class="edu-icons pt-4">
-                  <i class="fas fa-certificate fa-5x"></i>
-                </p>
-                <h5 class="pt-4">WebAcademy</h5>
-                <div class="card-body">
-                  Front-End Web Development
-                </div>
+                <a href="https://www.conversetolearn.org/ai-at-scale.html" target="_blank">
+                  <img src="imgs/co_reading.png"
+                  alt="AI at Scale Image" 
+                  class="card-image"/>
+                  <h5 class="pt-4">
+                    AI at Scale
+                  </h5>
+                  <div class="card-body">
+                    <p style="text-decoration: none; color: black">
+                      Developing and testing an AI-assisted co-reading application based on an expert-generated QAG dataset.
+                    </p>
+                  </div>
+                </a>
               </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-              <div class="card mb-5">
-                <p class="edu-icons pt-4">
-                  <i class="fas fa-award fa-5x"></i>
-                </p>
-                <h5 class="pt-4">Award Academy</h5>
-                <div class="card-body">
-                  1 st Award
-                </div>
-                <p>"Resume of the Year"</p>
+              <div class="card mb-4">
+                  <img src="imgs/classroom.jpg"
+                  alt="Classroom image" 
+                  class="card-image"/>
+                  <h5 class="pt-4">
+                    Capturing Online Instructor Practices usnig LMS Data
+                  </h5>
+                  <div class="card-body">
+                    <p style="text-decoration: none; color: black">
+                      Mapping data collected about course design from Canvas to instructor behavior.
+                    </p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card mb-4">
+                <a href="https://sites.uci.edu/cpleads/" target="_blank">
+                  <img src="imgs/data-science.jpg"
+                  alt="CP-LEADS" 
+                  class="card-image"/>
+                  <h5 class="pt-4">
+                    CP-LEADS
+                  </h5>
+                  <div class="card-body">
+                    <p style="text-decoration: none; color: black">
+                      Training undergraduate Education majors in Learning Engineering and Data Science.
+                    </p>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
@@ -162,53 +215,43 @@
       </section>
 
       <section class="resume-section p-3 p-lg-5" id="experience">
-        <h2 class="mb-4">&lt; Experience &gt;</h2>
+        <h2 class="mb-4">Experience</h2>
 
         <div class="my-auto">
           <div class="row">
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-6">
               <div class="card mb-5">
-                <img
-                  class="card-img-top p-2"
-                  src="web-developer.jpg"
-                  alt="web-developer"
-                />
-
                 <div class="card-body pb-0">
-                  <p>January 2017 - Present</p>
-                  <h5 class="card-title">Front End Web Developer</h5>
-
+                  <p>July 2021 - Present</p>
+                  <h5 class="card-title">Graduate Student Researcher</h5>
+                  <p>Digital Learning Lab, UC Irvine</p>
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item">
-                      Building responsive websites
+                      Managing project teams to accomplish objectives
                     </li>
                     <li class="list-group-item">
-                      Wordpress blogs
+                      Designing research studies and protocols
                     </li>
                     <li class="list-group-item">
-                      Debugging
+                      Collecting and analyzing quantitative and qualitative data
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
 
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-6">
               <div class="card mb-5">
-                <img
-                  class="card-img-top p-2"
-                  src="freelancing.jpg"
-                  alt="freelancing"
-                />
                 <div class="card-body pb-0">
-                  <p>September 2017 - Present</p>
-                  <h5 class="card-title">Front End Developer</h5>
+                  <p>June 2020 - September 2020</p>
+                  <h5 class="card-title">Software Engineering Intern</h5>
+                  <p>Polar</p>
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item">
-                      Creating mobile-friendly business websites
+                      Developed features and prototypes for web app
                     </li>
                     <li class="list-group-item">
-                      Building online personal pages
+                      React, MaterialUI
                     </li>
                     <li class="list-group-item">Customer support</li>
                   </ul>
@@ -216,19 +259,33 @@
               </div>
             </div>
 
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-6">
               <div class="card mb-5">
-                <img class="card-img-top" src="blogging.jpg" alt="blogging" />
                 <div class="card-body pb-0">
-                  <p>April 2018 - Present</p>
-                  <h5 class="card-title">IT Blogger</h5>
+                  <p>June 2019 - June 2020</p>
+                  <h5 class="card-title">Web Development Intern</h5>
+                  <p>Center for Regional Change, UC Davis</p>
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item">
-                      Creating informative posts for online magazines and
-                      communities
+                      Developed a front-end, static website
                     </li>
                     <li class="list-group-item">
-                      Writing for fun and experience
+                      Integrated interactive navigation features
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-6">
+              <div class="card mb-5">
+                <div class="card-body pb-0">
+                  <p>June 2019 - August 2019</p>
+                  <h5 class="card-title">Educational Technology Intern</h5>
+                  <p>ThoughtSTEM</p>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                      Developed curricula and technology for students learning to program games in Racket
                     </li>
                   </ul>
                 </div>
@@ -236,137 +293,49 @@
             </div>
           </div>
         </div>
+      </section>
 
-        <div class="text-left linkedin-link">
-          Check more details about my work experience on my
-          <a
-            href="https://www.linkedin.com/in/savvina-drougouti/"
-            target="_blank"
-            rel="noopener"
-            ><i class="fab fa-linkedin"></i
-          ></a>
-          profile
-        </div>
+      <section class="resume-section p-3 p-lg-5" id="pubs">
+        <h2 class="mb-4">Publications</h2>
+        <p><b>Ritchie, D.</b>, Ojeda Ramirez, S., Garcia, L., Warschauer, M. (submitted). Development and Implementation of an AI Literacy Curriculum for Upper Elementary and Middle School Students: An Experience Report. In <i>Proceedings of the 54th ACM Technical Symposium on Computer Science Education</i> (SIGCSE ’23).</p>
+        <p>Xu, Y., Wang, D., Yu, M., <b>Ritchie, D.</b>, Yao, B., Wu, T., Zhang, Z., Li, T., Bradford, N., Sun, B.,
+          Hoang, T., Sang, Y., Hou, Y., Ma, X., Yang, D., Peng, N., Yu, Z., & Warschauer, M. (2022).
+          Fantastic questions and where to find them: FairytaleQA— An authentic dataset for narrative
+          comprehension. In <i>Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics</i> (ACL ‘22).</p>
+        <p>Zhang, Z., Xu, Y., Wang Y., Yao, B., <b>Ritchie, D.</b>, Wu, T., Yu, M., Wang, D., & Li, T. (2022). Storybuddy: A human-AI collaborative agent for parent-child interactive storytelling. In <i>Proceedings of the 2022 CHI Conference on Human Factors in Computing Systems</i> (CHI ‘22).</p>
+        <p><b>Ritchie, D.</b> (2020). Review of existing video games for computer science education. <i>Prized Writing</i>, 31, 187-197.</p>
       </section>
 
       <section class="resume-section p-3 p-lg-5" id="education">
-        <h2 class="mb-4">&lt; Education &gt;</h2>
+        <h2 class="mb-4">Education</h2>
 
         <div class="row">
-          <div class="col-12 col-md-6 col-lg-4">
+          <div class="col-12 col-md-6 col-lg-6">
             <div class="card mb-4">
               <div class="edu-icons">
                 <i class="fas fa-university fa-5x"></i>
               </div>
 
               <div class="card-body pb-0">
-                <p>2017 - 2018</p>
-                <h5 class="card-title">Web Development</h5>
-
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">HTML5 & CSS3</li>
-                  <li class="list-group-item">JavaScript</li>
-                  <li class="list-group-item">jQuery</li>
-                  <li class="list-group-item">Teamwork</li>
-                </ul>
+                <p>2026 (Expected)</p>
+                <h5 class="card-title">Ph.D. in Education, Digital Media Specialization</h5>
+                <h6 class="card-title">University of California, Irvine</h6>
               </div>
             </div>
           </div>
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="card mb-4">
-              <div class="edu-icons">
-                <i class="fas fa-graduation-cap fa-5x edu-icons"></i>
-              </div>
-              <div class="card-body pb-0">
-                <p>2017 - 2018</p>
-                <h5 class="card-title">Front-End Web Development</h5>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">HTML5 & CSS3</li>
-                  <li class="list-group-item">JavaScript</li>
-                  <li class="list-group-item">jQuery</li>
-                  <li class="list-group-item">CSS Animation</li>
-                  <li class="list-group-item">Bootstrap 4</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-lg-4">
+          <div class="col-12 col-md-6 col-lg-6">
             <div class="card mb-4">
               <div class="edu-icons">
                 <i class="fas fa-university fa-5x"></i>
               </div>
-              <div class="card-body pb-0">
-                <p>2017 - 2018</p>
-                <h5 class="card-title">Web Development</h5>
 
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">HTML5 & CSS3</li>
-                  <li class="list-group-item">JavaScript</li>
-                  <li class="list-group-item">jQuery</li>
-                  <li class="list-group-item">Teamwork</li>
-                </ul>
+              <div class="card-body pb-0">
+                <p>2021</p>
+                <h5 class="card-title">B.S. in Computer Science, Minor in Education</h5>
+                <h6 class="card-title">University of California, Davis</h6>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section class="resume-section p-3 p-lg-5" id="contact">
-        <div class="my-auto">
-          <h2 class="mb-3">&lt; Contact &gt;</h2>
-
-          <ul class="fa-ul mb-4 ml-0">
-            <li id="mail-address">
-              <a href="mailto:youremail@mail.com">
-                <i class="fas fa-envelope-open mr-2"></i>youremail@mail.com</a
-              >
-            </li>
-            <li><i class="fas fa-mobile-alt mr-2"></i>+35988488488</li>
-            <li><i class="fas fa-map-marker-alt mr-2"></i>myLocation, World</li>
-          </ul>
-
-          <p>
-            ...or leave your message below and I will be back to you as soon as
-            possible.
-          </p>
-
-          <form
-            class="contact-form"
-            method="POST"
-            action="https://formspree.io/youremail@mail.com"
-          >
-            <div class="form-group">
-              <input
-                type="name"
-                class="form-control"
-                placeholder="Name"
-                name="name"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <input
-                type="email"
-                class="form-control"
-                placeholder="Email"
-                name="name"
-                required
-              />
-            </div>
-
-            <div class="form-group">
-              <textarea
-                class="form-control"
-                type="text"
-                placeholder="Message"
-                rows="7"
-                name="name"
-                required
-              ></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-submit">Submit</button>
-          </form>
         </div>
       </section>
 
@@ -451,6 +420,28 @@
             </li>
           </ul>
         </div>
+        </div>
+      </section>
+
+      <section class="resume-section p-3 p-lg-5" id="contact">
+        <div class="my-auto">
+          <h2 class="mb-3">Contact</h2>
+
+          <ul class="fa-ul mb-4 ml-0">
+            <li id="mail-address">
+              <a href="mailto:drritchi@uci.edu">
+                <i class="fas fa-envelope-open mr-2"></i>drritchi@uci.edu</a
+              >
+            </li>
+          </ul>
+          <ul class="fa-ul mb-4 ml-0">
+            <li id="mail-address">
+              <a href="https://github.com/dritchie1031" target="_blank">
+                <i class="fab fa-github mr-2"></i>dritchie1031</a
+              >
+            </li>
+          </ul>
+          </form>
         </div>
       </section>
     </div>
