@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects • Daniel Ritchie</title>
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Optional (brand-accurate icons) -->
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js" defer></script>
+
+  <meta name="description" content="Projects and case studies by Daniel: PapyrusAI, CodeAI, FairytaleQA, AIforCA." />
+</head>
+<body>
+  <!-- Header / Nav -->
+  <header>
+    <nav>
+      <a href="index.html" class="logo">Daniel Ritchie</a>
+
+      <!-- Desktop nav -->
+      <ul class="nav-links">
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="cv.pdf" target="_blank">CV</a></li>
+        <li><a href="mailto:drritchi@uci.edu">Contact Me</a></li>
+      </ul>
+
+      <!-- Mobile toggle -->
+      <button class="nav-toggle" aria-label="Open menu" aria-controls="mobile-drawer" aria-expanded="false">
+        <!-- hamburger icon -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile drawer -->
+  <div id="mobile-drawer" class="mobile-drawer" hidden>
+    <div class="mobile-drawer__backdrop" data-close></div>
+    <aside class="mobile-drawer__panel" role="dialog" aria-modal="true" aria-label="Main menu">
+      <button class="mobile-drawer__close" aria-label="Close menu" data-close>
+        <!-- X icon -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <nav class="mobile-drawer__nav">
+        <a href="projects.html">Projects</a>
+        <a href="research.html">Research</a>
+        <a href="cv.pdf" target="_blank">CV</a>
+        <a href="mailto:drritchi@uci.edu">Contact Me</a>
+      </nav>
+    </aside>
+  </div>
+
+  <!-- Heading -->
+  <section class="container" style="padding-top: 1rem;">
+    <h1 style="margin-bottom: .25rem;">Projects</h1>
+    <p style="color: var(--color-muted); max-width: 60ch;">
+      Selected work across research, teaching, and tech design. Click any card for a quick overview and links.
+    </p>
+  </section>
+
+  <!-- Projects Grid (static HTML cards + dialogs) -->
+  <section class="container">
+    <div class="flex-row" style="flex-wrap: wrap; gap: 2rem;">
+
+      <!-- PapyrusAI -->
+      <article class="card" style="flex:1 1 300px; max-width: 520px;">
+        <img src="images/thumbs/papyrusai.jpg" alt="PapyrusAI thumbnail" class="media-thumb" style="margin-bottom: 1rem;">
+        <h3 style="margin:.25rem 0 .5rem;">PapyrusAI: AI Classroom Tutor</h3>
+        <p class="meta">2025 • Researcher &amp; Product Lead</p>
+        <p style="color: var(--color-muted); margin:.5rem 0 1rem;">
+          Co-designed and iterated an AI-powered classroom writing tutor (PapyrusAI).
+        </p>
+        <div>
+          <span class="tag">research</span>
+          <span class="tag">tech design</span>
+        </div>
+        <div class="flex-between" style="width: 100%;margin-top: 1rem;">
+          <div class="flex-row" style="gap:.5rem; flex-wrap:wrap;">
+            <a href="https://genaied.org" target="_blank" rel="noopener" class="btn">Website</a>
+            <a href="https://papyrusai.org" target="_blank" rel="noopener" class="btn">App</a>
+          </div>
+          <button class="btn btn--orange open-modal" data-target="proj-papyrusai">Quick View</button>
+        </div>
+      </article>
+
+      <dialog id="proj-papyrusai" class="project-dialog">
+        <form method="dialog">
+          <header class="flex-between" style="gap:1rem; margin-bottom:.75rem;">
+            <h3 style="margin:0;">PapyrusAI: AI Classroom Tutor</h3>
+            <button aria-label="Close" class="btn btn--orange" value="close">Close</button>
+          </header>
+        </form>
+        <img src="images/thumbs/papyrusai.jpg" alt="PapyrusAI image" class="media-thumb" style="margin-bottom: 1rem;">
+        <p class="meta" style="margin-bottom:.5rem;">2025 • Researcher &amp; Product Lead</p>
+        <div style="margin-bottom:.75rem;">
+          <span class="tag">Educational Technology</span>
+          <span class="tag">LLMs</span>
+          <span class="tag">HCI</span>
+          <span class="tag">Generative AI</span>
+        </div>
+        <p style="color:var(--color-muted); margin:.75rem 0;">
+          PapyrusAI is an intelligent coach designed to meet two major challenges: improving students’ writing and AI literacy.
+          Students log on to the PapyrusAI Web portal where they receive detailed individual feedback via GPT-4’s API on their
+          writing plans and written texts, as well as scores per school-provided rubrics. An instructor portal allows teachers
+          to select among existing prompt sets or add their own prompts, while also including a dashboard showing and analyzing
+          student use.
+        </p>
+        <p style="color:var(--color-muted); margin:.75rem 0;">
+          PapyrusAI functions like a Socratic tutor, helping students develop their topic, outline, or argument through back-and-forth
+          dialogue, and providing feedback on their organization, content, and language use. Through using it, students get
+          first-hand practice working with AI in a safe and scaffolded environment.
+        </p>
+        <div class="link-row flex-row" style="flex-wrap:wrap; margin-top: 1rem;">
+          <a href="https://genaied.org" target="_blank" rel="noopener" class="btn">Website</a>
+          <a href="https://papyrusai.org" target="_blank" rel="noopener" class="btn">App</a>
+        </div>
+      </dialog>
+
+            <!-- AIforCA -->
+      <article class="card" style="flex:1 1 300px; max-width: 520px;">
+        <img src="images/thumbs/aiforca.png" alt="AIforCA thumbnail" class="media-thumb" style="margin-bottom: 1rem;">
+        <h3 style="margin:.25rem 0 .5rem;">AIforCA</h3>
+        <p class="meta">2025 • Chair</p>
+        <p style="color: var(--color-muted); margin:.5rem 0 1rem;">
+          An initiative advancing AI literacy and equitable CS education for California schools.
+        </p>
+        <div>
+          <span class="tag">teaching</span>
+          <span class="tag">leadership</span>
+        </div>
+        <div class="flex-between" style="width: 100%;margin-top: 1rem;">
+          <div class="flex-row" style="gap:.5rem; flex-wrap:wrap;">
+            <a href="https://sites.google.com/view/aiforca/home" target="_blank" rel="noopener" class="btn">Website</a>
+          </div>
+          <button class="btn btn--orange open-modal" data-target="proj-aiforca">Quick View</button>
+        </div>
+      </article>
+
+      <dialog id="proj-aiforca" class="project-dialog">
+        <form method="dialog">
+          <header class="flex-between" style="gap:1rem; margin-bottom:.75rem;">
+            <h3 style="margin:0;">AIforCA</h3>
+            <button aria-label="Close" class="btn btn--orange" value="close">Close</button>
+          </header>
+        </form>
+        <img src="images/thumbs/aiforca.png" alt="AIforCA image" class="media-thumb" style="margin-bottom: 1rem;">
+        <p class="meta" style="margin-bottom:.5rem;">2025 • Chair</p>
+        <div style="margin-bottom:.75rem;">
+          <span class="tag">AI Literacy</span>
+          <span class="tag">Policy</span>
+          <span class="tag">CS Education</span>
+        </div>
+        <p style="color:var(--color-muted); margin:.75rem 0;">
+          AIforCA is a project of CSforCA, a coalition of K–12 educators, nonprofit organizations, higher education, and
+          industry leaders. We believe research, data, and classroom experience should inform policy to ensure all California
+          students have access to high-quality CS education.
+        </p>
+        <p style="color:var(--color-muted); margin:.75rem 0;">
+          We engage the community through policy discussions and teacher training events where we share lessons about AI and CS.
+        </p>
+        <div class="link-row flex-row" style="flex-wrap:wrap; margin-top: 1rem;">
+          <a href="https://sites.google.com/view/aiforca/home" target="_blank" rel="noopener" class="btn">Website</a>
+        </div>
+      </dialog>
+
+      <!-- CodeAI -->
+      <article class="card" style="flex:1 1 300px; max-width: 520px;">
+        <img src="images/thumbs/codeai.png" alt="CodeAI thumbnail" class="media-thumb" style="margin-bottom: 1rem;">
+        <h3 style="margin:.25rem 0 .5rem;">CodeAI: AI &amp; Data Literacy Curriculum</h3>
+        <p class="meta">2023 • Middle School Lead (Former)</p>
+        <p style="color: var(--color-muted); margin:.5rem 0 1rem;">
+          Curriculum and digital tools for AI/data literacy, deployed in schools and community programs.
+        </p>
+        <div>
+          <span class="tag">research</span>
+          <span class="tag">teaching</span>
+        </div>
+        <div class="flex-between" style="width: 100%;margin-top: 1rem;">
+          <div class="flex-row" style="gap:.5rem; flex-wrap:wrap;">
+            <a href="https://www.computingandaiforall.org/" target="_blank" rel="noopener" class="btn">Website</a>
+          </div>
+          <button class="btn btn--orange open-modal" data-target="proj-codeai">Quick View</button>
+        </div>
+      </article>
+
+      <dialog id="proj-codeai" class="project-dialog">
+        <form method="dialog">
+          <header class="flex-between" style="gap:1rem; margin-bottom:.75rem;">
+            <h3 style="margin:0;">CodeAI: AI &amp; Data Literacy Curriculum</h3>
+            <button aria-label="Close" class="btn btn--orange" value="close">Close</button>
+          </header>
+        </form>
+        <img src="images/thumbs/codeai.png" alt="CodeAI image" class="media-thumb" style="margin-bottom: 1rem;">
+        <p class="meta" style="margin-bottom:.5rem;">2023 • Middle School Lead (Former)</p>
+        <div style="margin-bottom:.75rem;">
+          <span class="tag">AI Literacy</span>
+          <span class="tag">Curriculum</span>
+          <span class="tag">Pedagogy</span>
+        </div>
+        <p style="color:var(--color-muted); margin:.75rem 0;">
+          An integrated curriculum using an innovative Scratch-based platform to code AI chatbots, create 3D modeling, and
+          support users with an AI assistant capable of image creation. Middle school students explore generative AI tools,
+          build AI-powered applications, create voice and vision AI apps, and explore advanced topics like neural networks
+          and self-driving cars.
+        </p>
+        <div class="link-row flex-row" style="flex-wrap:wrap; margin-top: 1rem;">
+          <a href="https://www.computingandaiforall.org/" target="_blank" rel="noopener" class="btn">Website</a>
+        </div>
+      </dialog>
+
+      <!-- FairytaleQA -->
+      <article class="card" style="flex:1 1 300px; max-width: 520px;">
+        <img src="images/thumbs/fairytaleqa.png" alt="FairytaleQA thumbnail" class="media-thumb" style="margin-bottom: 1rem;">
+        <h3 style="margin:.25rem 0 .5rem;">FairytaleQA Dataset &amp; StoryBuddy</h3>
+        <p class="meta">2022 • Middle School Lead (Former)</p>
+        <p style="color: var(--color-muted); margin:.5rem 0 1rem;">
+          Dataset of 10,000+ QA pairs from children’s stories and a collaborative storytelling agent.
+        </p>
+        <div>
+          <span class="tag">research</span>
+          <span class="tag">tech design</span>
+        </div>
+        <div class="flex-between" style="width: 100%;margin-top: 1rem;">
+          <div class="flex-row" style="gap:.5rem; flex-wrap:wrap;">
+            <a href="https://github.com/uci-soe/FairytaleQAData" target="_blank" rel="noopener" class="btn">Dataset</a>
+            <a href="https://arxiv.org/abs/2202.06205" target="_blank" rel="noopener" class="btn">App</a>
+          </div>
+          <button class="btn btn--orange open-modal" data-target="proj-fairytaleqa">Quick View</button>
+        </div>
+      </article>
+
+      <dialog id="proj-fairytaleqa" class="project-dialog">
+        <form method="dialog">
+          <header class="flex-between" style="gap:1rem; margin-bottom:.75rem;">
+            <h3 style="margin:0;">FairytaleQA Dataset &amp; StoryBuddy</h3>
+            <button aria-label="Close" class="btn btn--orange" value="close">Close</button>
+          </header>
+        </form>
+        <img src="images/thumbs/fairytaleqa.png" alt="FairytaleQA image" class="media-thumb" style="margin-bottom: 1rem;">
+        <p class="meta" style="margin-bottom:.5rem;">2022 • Middle School Lead (Former)</p>
+        <div style="margin-bottom:.75rem;">
+          <span class="tag">Dataset</span>
+          <span class="tag">NLP</span>
+          <span class="tag">Reading Comprehension</span>
+          <span class="tag">HCI</span>
+        </div>
+        <p style="color:var(--color-muted); margin:.75rem 0;">
+          The FairytaleQA dataset contains CSV files of 278 children's stories from Project Gutenberg and a set of questions
+          and answers developed by educational experts based on an evidence-based framework. It focuses on narrative comprehension
+          of K–8 students to facilitate assessment and training for both machines and young readers.
+        </p>
+        <p style="color:var(--color-muted); margin:.75rem 0;">
+          We then developed StoryBuddy, an AI-enabled system for parents to create interactive storytelling experiences,
+          highlighting the need to balance parent involvement and bonding with minimizing intervention when parents are busy.
+        </p>
+        <div class="link-row flex-row" style="flex-wrap:wrap; margin-top: 1rem;">
+          <a href="https://github.com/uci-soe/FairytaleQAData" target="_blank" rel="noopener" class="btn">Dataset</a>
+          <a href="https://arxiv.org/abs/2202.06205" target="_blank" rel="noopener" class="btn">App</a>
+        </div>
+      </dialog>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="container flex-center" style="margin-top: 1rem; padding: 2rem 0; color: var(--color-muted); font-size: .9rem;">
+    <div class="flex-row" style="gap:1rem; align-items:center;">
+      <p>&copy; 2025 Daniel Ritchie</p>
+      <span aria-hidden="true">•</span>
+      <a href="https://www.linkedin.com/in/daniel-ritchie" target="_blank" aria-label="LinkedIn">
+        <span class="iconify" data-icon="simple-icons:linkedin" style="font-size:1.2rem;color: #444444"></span>
+      </a>
+      <a href="https://scholar.google.com/citations?user=tXXOEGMAAAAJ" target="_blank" aria-label="Google Scholar">
+        <span class="iconify" data-icon="simple-icons:googlescholar" style="font-size:1.2rem;color: #444444"></span>
+      </a>
+      <a href="https://github.com/dritchie1031" target="_blank" aria-label="GitHub">
+        <span class="iconify" data-icon="simple-icons:github" style="font-size:1.2rem;color: #444444"></span>
+      </a>
+      <a href="mailto:drritchie@uci.edu" aria-label="Email">
+        <span class="iconify" data-icon="mdi:email-outline" style="font-size:1.2rem;color: #444444"></span>
+      </a>
+    </div>
+  </footer>
+
+  <!-- JS to open/close dialogs + deep linking -->
+  <script>
+    // Open by data-target
+    document.querySelectorAll('.open-modal').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const dlg = document.getElementById(btn.dataset.target);
+        if (dlg && typeof dlg.showModal === 'function') dlg.showModal();
+        else dlg?.show();
+      });
+    });
+
+    // Backdrop click to close
+    document.querySelectorAll('dialog').forEach(dlg => {
+      dlg.addEventListener('click', (e) => {
+        const rect = dlg.getBoundingClientRect();
+        const inside = e.clientX >= rect.left && e.clientX <= rect.right &&
+                       e.clientY >= rect.top  && e.clientY <= rect.bottom;
+        if (!inside) dlg.close();
+      });
+      // Open via hash on load
+      if (location.hash.slice(1) === dlg.id) dlg.showModal?.();
+    });
+
+    // Close open dialogs when navigating history
+    window.addEventListener('popstate', () => {
+      document.querySelectorAll('dialog[open]').forEach(d => d.close());
+    });
+  </script>
+  <script>
+  (function () {
+    const toggle = document.querySelector('.nav-toggle');
+    const drawer = document.getElementById('mobile-drawer');
+    const panel  = drawer?.querySelector('.mobile-drawer__panel');
+    const closers = drawer?.querySelectorAll('[data-close]');
+    let lastFocused = null;
+
+    function openDrawer() {
+      lastFocused = document.activeElement;
+      drawer.hidden = false;
+      requestAnimationFrame(() => {
+        drawer.classList.add('is-open');
+        document.body.classList.add('no-scroll');
+        toggle.setAttribute('aria-expanded', 'true');
+        // focus first link
+        const firstLink = drawer.querySelector('.mobile-drawer__nav a');
+        firstLink?.focus();
+      });
+    }
+
+    function closeDrawer() {
+      drawer.classList.remove('is-open');
+      document.body.classList.remove('no-scroll');
+      toggle.setAttribute('aria-expanded', 'false');
+      // wait for animation then hide & restore focus
+      setTimeout(() => {
+        drawer.hidden = true;
+        lastFocused?.focus();
+      }, 200);
+    }
+
+    toggle?.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      expanded ? closeDrawer() : openDrawer();
+    });
+
+    closers?.forEach(el => el.addEventListener('click', closeDrawer));
+
+    // Close on Escape
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && drawer && !drawer.hidden) closeDrawer();
+    });
+
+    // Click outside panel closes
+    drawer?.addEventListener('click', (e) => {
+      if (!panel.contains(e.target)) closeDrawer();
+    });
+
+    // Trap focus within panel when open (basic)
+    document.addEventListener('focusin', (e) => {
+      if (drawer.hidden) return;
+      if (!drawer.contains(e.target)) {
+        panel.querySelector('a,button,[tabindex]:not([tabindex="-1"])')?.focus();
+      }
+    });
+  })();
+</script>
+</body>
+</html>

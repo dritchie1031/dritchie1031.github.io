@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Research • Daniel Ritchie</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Research publications and presentations by Daniel Ritchie." />
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js" defer></script>
+  <style>
+    /* Page-local helpers */
+    .section-intro { color: var(--color-muted); max-width: 70ch; }
+
+    /* Filter bar */
+    .filters { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .btn-filter { background: #e5e7eb; color: #111827; }
+    .btn-filter:hover { background: #d1d5db; }
+    .btn-filter[aria-pressed="true"] {
+      background: var(--color-accent);
+      color: #fff;
+    }
+
+    /* Table styling */
+    .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    table.research-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--color-bg-alt);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .research-table th, .research-table td {
+      padding: .9rem 1rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    .research-table thead th {
+      background: #f3f4f6;
+      font-weight: 600;
+      font-family: var(--font-heading);
+      border-bottom: 1px solid #e5e7eb;
+      white-space: nowrap;
+    }
+    .research-table tbody tr { border-bottom: 1px solid #f1f5f9; }
+    .research-table tbody tr.hidden { display: none; }
+
+    /* Tags in table */
+    .tags { display: flex; flex-wrap: wrap; gap: .35rem; }
+    .tag {
+      display: inline-block; font-size: .8rem; padding: .2rem .5rem;
+      border-radius: 999px; background: rgba(30,58,138,.08); color: var(--color-accent);
+      white-space: nowrap;
+    }
+    /* Non-filterable tags look neutral */
+    .tag--type { background: #ede9fe; color: #6b21a8; } /* purple-ish pill for type tags */
+
+    /* Small screens: stack long title cell nicely */
+    @media (max-width: 640px) {
+      .research-table td[colspan] { white-space: normal; }
+      .research-table td a { word-break: break-word; }
+    }
+
+    /* Mobile-friendly research table */
+    @media (max-width: 900px) {
+    .research-table th:not(:first-child),
+    .research-table td:not(:first-child) {
+        display: none;
+    }
+
+    .research-table th:first-child,
+    .research-table td:first-child {
+        width: 100%;
+    }
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Header / Nav -->
+  <header>
+    <nav>
+      <a href="index.html" class="logo">Daniel Ritchie</a>
+
+      <!-- Desktop nav -->
+      <ul class="nav-links">
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="cv.pdf" target="_blank">CV</a></li>
+        <li><a href="mailto:drritchi@uci.edu">Contact Me</a></li>
+      </ul>
+
+      <!-- Mobile toggle -->
+      <button class="nav-toggle" aria-label="Open menu" aria-controls="mobile-drawer" aria-expanded="false">
+        <!-- hamburger icon -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile drawer -->
+  <div id="mobile-drawer" class="mobile-drawer" hidden>
+    <div class="mobile-drawer__backdrop" data-close></div>
+    <aside class="mobile-drawer__panel" role="dialog" aria-modal="true" aria-label="Main menu">
+      <button class="mobile-drawer__close" aria-label="Close menu" data-close>
+        <!-- X icon -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <nav class="mobile-drawer__nav">
+        <a href="projects.html">Projects</a>
+        <a href="research.html">Research</a>
+        <a href="cv.pdf" target="_blank">CV</a>
+        <a href="mailto:drritchi@uci.edu">Contact Me</a>
+      </nav>
+    </aside>
+  </div>
+
+  <!-- Heading -->
+  <section class="container" style="padding-top:1rem;width: 1600px; max-width: 90vw;">
+    <h1>Research</h1>
+    <p class="section-intro">
+      Browse publications and presentations. Use the buttons to filter by line of research.
+    </p>
+  </section>
+
+  <!-- Lines of Research (Filter Buttons) -->
+  <section class="container" aria-label="Filter by line of research" style="width: 1600px; max-width: 90vw;">
+    <div class="filters" role="toolbar" aria-label="Lines of research filters">
+      <button class="btn btn-filter" data-filter="*" aria-pressed="true">All</button>
+      <button class="btn btn-filter" data-filter="Classroom AI" aria-pressed="false">AI in the Classroom</button>
+      <button class="btn btn-filter" data-filter="AI & Data Literacy" aria-pressed="false">AI &amp; Data Literacy</button>
+      <button class="btn btn-filter" data-filter="Ed Tech Design" aria-pressed="false">Educational Technology Design</button>
+      <button class="btn btn-filter" data-filter="NLP" aria-pressed="false">Natural Language Processing (NLP)</button>
+      <!-- Add more line buttons as needed; ensure the text matches the tag in each row's data-tags -->
+    </div>
+  </section>
+
+  <!-- Research Table -->
+  <section class="container" style="width: 1600px; max-width: 90vw;">
+    <div class="table-wrap">
+      <table class="research-table" id="research-table">
+        <thead>
+          <tr>
+            <th >Title</th>
+            <th>Authors</th>
+            <th>Venue</th>
+            <th>Year</th>
+            <th>Tags</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <!-- ===== Rows: Publications & Presentations =====
+               Use data-tags to include ALL tags (both line-of-research tags and type tags).
+               Filtering uses ONLY the line-of-research tags (via the buttons above).
+          -->
+
+        <tr data-tags="Classroom AI, AI & Data Literacy, Ed Tech Design, Conference Paper">
+        <td>
+            <a href="https://doi.org/10.1007/978-3-031-98465-5_36">Supporting middle school English teachers’ AI literacy goals through a generative AI tutor</a>
+        </td>
+        <td><strong>Ritchie, D.</strong>; Tate, T.; Zhang, Y.; Werry, K.; Warschauer, M.</td>
+        <td>AIED 2025</td>
+        <td>2025</td>
+        <td>
+            <div class="tags">
+            <span class="tag">Classroom AI</span>
+            <span class="tag">AI &amp; Data Literacy</span>
+            <span class="tag">Ed Tech Design</span>
+            <span class="tag tag--type">Conference Paper</span>
+            </div>
+        </td>
+        </tr>
+
+        <tr data-tags="Classroom AI, Journal Paper">
+        <td>
+            <a href="https://doi.org/10.1007/s10791-025-09563-9">Incorporating generative AI into a writing-intensive undergraduate course without off-loading learning</a>
+        </td>
+        <td>Tate, T. P.; Harnick-Shapiro, B.; <strong>Ritchie, D.</strong>; Tseng, W.; Dennin, M.; Warschauer, M.</td>
+        <td>Discover Computing</td>
+        <td>2025</td>
+        <td>
+            <div class="tags">
+            <span class="tag">Classroom AI</span>
+            <span class="tag tag--type">Journal Paper</span>
+            </div>
+        </td>
+        </tr>
+
+        <tr data-tags="Classroom AI, Ed Tech Design, Presentation">
+        <td>Co-Designing Generative AI Tools for Equitable Classroom Integration</td>
+        <td><strong>Ritchie, D.</strong>; Saito-Stehberger, D.; Tate, T.; Warschauer, M.</td>
+        <td>ISLS Annual Meeting</td>
+        <td>2025</td>
+        <td>
+            <div class="tags">
+            <span class="tag">Classroom AI</span>
+            <span class="tag">Ed Tech Design</span>
+            <span class="tag tag--type">Presentation</span>
+            </div>
+        </td>
+        </tr>
+
+        <tr data-tags="Classroom AI, NLP, Journal Paper">
+        <td>
+            <a href="https://doi.org/10.1016/j.caeai.2024.100255">Can AI provide useful holistic essay scoring?</a>
+        </td>
+        <td>Tate, T. P.; Steiss, J.; Bailey, D.; Graham, S.; Moon, Y.; <strong>Ritchie, D.</strong>; Tseng, W.; Warschauer, M.</td>
+        <td>Computers &amp; Education: Artificial Intelligence</td>
+        <td>2024</td>
+        <td>
+            <div class="tags">
+            <span class="tag">Classroom AI</span>
+            <span class="tag">NLP</span>
+            <span class="tag tag--type">Journal Paper</span>
+            </div>
+        </td>
+        </tr>
+
+        <tr data-tags="Ed Tech Design, Journal Paper">
+        <td>
+            <a href="https://doi.org/10.1037/edu0000889">Artificial intelligence enhances children’s science learning from television shows</a>
+        </td>
+        <td>Xu, Y.; He, K.; Levine, J.; <strong>Ritchie, D.</strong>; Pan, Z.; Bustamante, A.; Warschauer, M.</td>
+        <td>Journal of Educational Psychology</td>
+        <td>2024</td>
+        <td>
+            <div class="tags">
+            <span class="tag">Ed Tech Design</span>
+            <span class="tag tag--type">Journal Paper</span>
+            </div>
+        </td>
+        </tr>
+
+        <tr data-tags="AI & Data Literacy, Classroom AI, Presentation">
+        <td>From Language to Algorithms: Integrating AI Literacy in Middle School English and STEM Curricula</td>
+        <td><strong>Ritchie, D.</strong></td>
+        <td>University of Tübingen LEAD Retreat</td>
+        <td>2024</td>
+        <td>
+            <div class="tags">
+            <span class="tag">AI &amp; Data Literacy</span>
+            <span class="tag">Classroom AI</span>
+            <span class="tag tag--type">Presentation</span>
+            </div>
+        </td>
+        </tr>
+
+        <tr data-tags="AI & Data Literacy, Classroom AI, Presentation">
+        <td>Promoting AI literacy — A university-school partnership</td>
+        <td>Warschauer, M.; <strong>Ritchie, D.</strong>; Daviss, M.; Gonzalez, I.; Zavala, J.</td>
+        <td>California Charter School Association Annual Conference</td>
+        <td>2024</td>
+        <td>
+            <div class="tags">
+            <span class="tag">AI &amp; Data Literacy</span>
+            <span class="tag">Classroom AI</span>
+            <span class="tag tag--type">Presentation</span>
+            </div>
+        </td>
+        </tr>
+
+        <tr data-tags="AI & Data Literacy, Journal Paper">
+        <td>
+            <a href="https://doi.org/10.5070/B5.35861">AI Literacy for Multilingual Learners: Storytelling, Role-playing, and Programming</a>
+        </td>
+        <td>Ojeda-Ramirez, S.; <strong>Ritchie, D.</strong>; Warschauer, M.</td>
+        <td>The CATESOL Journal</td>
+        <td>2024</td>
+        <td>
+            <div class="tags">
+            <span class="tag">AI &amp; Data Literacy</span>
+            <span class="tag tag--type">Journal Paper</span>
+            </div>
+        </td>
+        </tr>
+
+        <tr data-tags="AI & Data Literacy, Presentation">
+        <td>Preparing our students with AI literacy</td>
+        <td>Warschauer, M.; <strong>Ritchie, D.</strong></td>
+        <td>Ceibal National Conference on AI in Education (Keynote)</td>
+        <td>2023</td>
+        <td>
+            <div class="tags">
+            <span class="tag">AI &amp; Data Literacy</span>
+            <span class="tag tag--type">Presentation</span>
+            </div>
+        </td>
+        </tr>
+
+        <tr data-tags="AI & Data Literacy, Presentation">
+        <td>Promoting AI Literacy</td>
+        <td>Warschauer, M.; <strong>Ritchie, D.</strong></td>
+        <td>LA County Office of Education AI Symposium</td>
+        <td>2023</td>
+        <td>
+            <div class="tags">
+            <span class="tag">AI &amp; Data Literacy</span>
+            <span class="tag tag--type">Presentation</span>
+            </div>
+        </td>
+        </tr>
+
+        <tr data-tags="AI & Data Literacy, Classroom AI">
+        <td>
+            <a href="https://www.writecenter.org/uploads/1/2/5/6/125695261/educational_research_and_ai-generated_writing_tate_et_al_2023__2_.pdf">
+            Educational research and AI-generated writing: Confronting the coming tsunami
+            </a>
+        </td>
+        <td>Tate, T.; Doroudi, S.; <strong>Ritchie, D.</strong>; Xu, Y.; Warschauer, M.</td>
+        <td>EdArXiv</td>
+        <td>2023</td>
+        <td>
+            <div class="tags">
+            <span class="tag">AI &amp; Data Literacy</span>
+            <span class="tag">Classroom AI</span>
+            <span class="tag tag--type">Preprint</span>
+            </div>
+        </td>
+        </tr>
+
+        <tr data-tags="Ed Tech Design, Presentation">
+        <td>Interaction With a Television Character Powered by Artificial Intelligence Promotes Children’s Science Learning</td>
+        <td>Xu, Y.; Levine, J.; Vigil, V.; <strong>Ritchie, D.</strong>; Zhang, S.; Thomas, T.; Barrera, C.; Meza, M.; Bustamante, A. S.; Warschauer, M.</td>
+        <td>AERA Annual Meeting</td>
+        <td>2023</td>
+        <td>
+            <div class="tags">
+            <span class="tag">Ed Tech Design</span>
+            <span class="tag tag--type">Presentation</span>
+            </div>
+        </td>
+        </tr>
+
+        <tr data-tags="Ed Tech Design, Presentation">
+        <td>Interacting with a Conversational Agent Promotes Children’s Science Learning</td>
+        <td>Zhang, S.; Vigil, V.; <strong>Ritchie, D.</strong>; Levine, J.; Xu, Y.</td>
+        <td>SRCD Annual Meeting</td>
+        <td>2023</td>
+        <td>
+            <div class="tags">
+            <span class="tag">Ed Tech Design</span>
+            <span class="tag tag--type">Presentation</span>
+            </div>
+        </td>
+        </tr>
+
+        <tr data-tags="NLP, Conference Paper">
+        <td>
+            <a href="https://doi.org/10.18653/v1/2022.acl-long.34">
+            Fantastic questions and where to find them: FairytaleQA—An authentic dataset for narrative comprehension
+            </a>
+        </td>
+        <td>Xu, Y.; Wang, D.; Yu, M.; <strong>Ritchie, D.</strong>; Yao, B.; Wu, T.; Zhang, Z.; Li, T.; et&nbsp;al.</td>
+        <td>ACL 2022</td>
+        <td>2022</td>
+        <td>
+            <div class="tags">
+            <span class="tag">NLP</span>
+            <span class="tag tag--type">Conference Paper</span>
+            </div>
+        </td>
+        </tr>
+
+        <tr data-tags="Ed Tech Design, Conference Paper">
+        <td>
+            <a href="https://doi.org/10.1145/3491102.3517479">StoryBuddy: A human-AI collaborative agent for parent-child interactive storytelling</a>
+        </td>
+        <td>Zhang, Z.; Xu, Y.; Wang, Y.; Yao, B.; <strong>Ritchie, D.</strong>; Wu, T.; Yu, M.; Wang, D.; Li, T.</td>
+        <td>CHI 2022</td>
+        <td>2022</td>
+        <td>
+            <div class="tags">
+            <span class="tag">Ed Tech Design</span>
+            <span class="tag tag--type">Conference Paper</span>
+            </div>
+        </td>
+        </tr>
+
+        <tr data-tags="Ed Tech Design, AI & Data Literacy">
+        <td>Review of existing video games for computer science education</td>
+        <td><strong>Ritchie, D.</strong></td>
+        <td>Prized Writing</td>
+        <td>2020</td>
+        <td>
+            <div class="tags">
+            <span class="tag">Ed Tech Design</span>
+            <span class="tag">AI &amp; Data Literacy</span>
+            <span class="tag tag--type">Journal Paper</span>
+            </div>
+        </td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="container flex-center" style="margin-top: 1rem; padding: 2rem 0; color: var(--color-muted); font-size: .9rem;">
+    <div class="flex-row" style="gap:1rem; align-items:center;">
+      <p>&copy; 2025 Daniel Ritchie</p>
+      <span aria-hidden="true">•</span>
+      <a href="https://www.linkedin.com/in/daniel-ritchie" target="_blank" aria-label="LinkedIn">
+        <span class="iconify" data-icon="simple-icons:linkedin" style="font-size:1.2rem;color: #444444"></span>
+      </a>
+      <a href="https://scholar.google.com/citations?user=tXXOEGMAAAAJ" target="_blank" aria-label="Google Scholar">
+        <span class="iconify" data-icon="simple-icons:googlescholar" style="font-size:1.2rem;color: #444444"></span>
+      </a>
+      <a href="https://github.com/dritchie1031" target="_blank" aria-label="GitHub">
+        <span class="iconify" data-icon="simple-icons:github" style="font-size:1.2rem;color: #444444"></span>
+      </a>
+      <a href="mailto:drritchie@uci.edu" aria-label="Email">
+        <span class="iconify" data-icon="mdi:email-outline" style="font-size:1.2rem;color: #444444"></span>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Filtering JS -->
+  <script>
+    (function() {
+      const rows = Array.from(document.querySelectorAll('#research-table tbody tr'));
+      const btns = Array.from(document.querySelectorAll('.btn-filter'));
+
+      function setActive(btn) {
+        btns.forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
+      }
+
+      function applyFilter(tag) {
+        const all = tag === '*' || !tag;
+        rows.forEach(row => {
+          const tags = (row.getAttribute('data-tags') || '').toLowerCase();
+          const hit = all ? true : tags.split(',').map(s => s.trim()).includes(tag.toLowerCase());
+          row.classList.toggle('hidden', !hit);
+        });
+      }
+
+      btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          setActive(btn);
+          applyFilter(btn.dataset.filter);
+        });
+      });
+
+      // Optional: support deep-link ?tag=AI%20in%20the%20Classroom
+      const params = new URLSearchParams(location.search);
+      const initial = params.get('tag');
+      if (initial) {
+        const match = btns.find(b => (b.dataset.filter || '').toLowerCase() === initial.toLowerCase());
+        if (match) {
+          setActive(match);
+          applyFilter(match.dataset.filter);
+          return;
+        }
+      }
+      // Default to All
+      applyFilter('*');
+    })();
+  </script>
+  <script>
+  (function () {
+    const toggle = document.querySelector('.nav-toggle');
+    const drawer = document.getElementById('mobile-drawer');
+    const panel  = drawer?.querySelector('.mobile-drawer__panel');
+    const closers = drawer?.querySelectorAll('[data-close]');
+    let lastFocused = null;
+
+    function openDrawer() {
+      lastFocused = document.activeElement;
+      drawer.hidden = false;
+      requestAnimationFrame(() => {
+        drawer.classList.add('is-open');
+        document.body.classList.add('no-scroll');
+        toggle.setAttribute('aria-expanded', 'true');
+        // focus first link
+        const firstLink = drawer.querySelector('.mobile-drawer__nav a');
+        firstLink?.focus();
+      });
+    }
+
+    function closeDrawer() {
+      drawer.classList.remove('is-open');
+      document.body.classList.remove('no-scroll');
+      toggle.setAttribute('aria-expanded', 'false');
+      // wait for animation then hide & restore focus
+      setTimeout(() => {
+        drawer.hidden = true;
+        lastFocused?.focus();
+      }, 200);
+    }
+
+    toggle?.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      expanded ? closeDrawer() : openDrawer();
+    });
+
+    closers?.forEach(el => el.addEventListener('click', closeDrawer));
+
+    // Close on Escape
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && drawer && !drawer.hidden) closeDrawer();
+    });
+
+    // Click outside panel closes
+    drawer?.addEventListener('click', (e) => {
+      if (!panel.contains(e.target)) closeDrawer();
+    });
+
+    // Trap focus within panel when open (basic)
+    document.addEventListener('focusin', (e) => {
+      if (drawer.hidden) return;
+      if (!drawer.contains(e.target)) {
+        panel.querySelector('a,button,[tabindex]:not([tabindex="-1"])')?.focus();
+      }
+    });
+  })();
+</script>
+</body>
+</html>
